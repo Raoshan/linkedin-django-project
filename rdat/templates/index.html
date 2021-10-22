@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {%load static%}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | E-Shopper</title>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/css/prettyPhoto.css" rel="stylesheet">
+    <link href="static/css/price-range.css" rel="stylesheet">
+    <link href="static/css/animate.css" rel="stylesheet">
+  	<link href="static/css/main.css" rel="stylesheet">
+  	<link href="static/css/responsive.css" rel="stylesheet">        
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>ContatUs</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div><!--/header_top-->
+  </header>
+		
+	<hr>	
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+          <h2>Category</h2>
+
+						<div class="panel-group category-products brands_products" id="accordian"><!--category-productsr-->
+						
+              {%for cat in category%}			
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">{{cat.category}}</a></h4>
+								</div>
+							</div>
+              {%endfor%}						
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--Sub Category-->
+							<h2>Sub Category</h2>
+              {%for cat in subcategory%}	
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">{{cat.subCategory}}</a></h4>
+								</div>
+							</div>
+              {%endfor%}
+						</div><!--/brands_products-->
+						
+						
+						
+						<div class="shipping text-center"><!--shipping-->
+							<img src="images/home/shipping.jpg" alt="" />
+						</div><!--/shipping-->
+					
+					</div>
+				</div>
+				  
+				<div class="col-sm-9 padding-right">
+				
+						<h2 class="title text-center">Company Details</h2>
+            
+							
+                <table class="table">
+                  <thead>
+                    <tr>
+                    <th scope="col">CompanyName</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">State</th>
+                    <th scope="col">No Of Emp</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {%for company in companydetail%}
+                  <tr>
+                  <th scope="row">{{company.company}}</th>
+                  <td>{{company.description}}</td>
+                  <td>{{company.no_of_emp}}</td>
+                  <td>{{company.state}}</td>
+                  
+                  
+                </tr>{%endfor%}
+                </tbody>
+               </table>           
+                	           
+							</div>	        
+				
+           
+  </div>
+  </div>          					
+		
+	</section>
+	
+	
+		
+	
+
+  
+  <script src="static/js/jquery.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
+	<script src="static/js/jquery.scrollUp.min.js"></script>
+	<script src="static/js/price-range.js"></script>
+  <script src="static/js/jquery.prettyPhoto.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+</html>
